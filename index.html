@@ -108,7 +108,7 @@
         header::after {
             content: "";
             position: absolute;
-            
+
             right: 0;
             width: 50vw;
             background: linear-gradient(to left, rgba(2, 132, 199, 0.4), rgba(30, 58, 138, 0.05), transparent);
@@ -739,14 +739,23 @@
         }
 
         .plan-icon {
-            height: 48px;
-            width: 48px;
+            height: 128px;
+            width: 128px;
             border-radius: 16px;
+            overflow: hidden;
+            /* garante que a imagem respeite o arredondamento */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
         }
+
+        .plan-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* ou contain, dependendo do formato do seu logo */
+        }
+
 
         .plan-icon.pro {
             background: rgba(56, 189, 248, 0.2);
@@ -1246,17 +1255,6 @@
             margin-bottom: 28px;
         }
 
-        /* Icone “FULL” */
-        .plan-icon {
-            background: rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(96, 165, 250, 0.35);
-            color: #60a5fa;
-            font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(4px);
-        }
 
         /* textos */
         .plan-info .plan-label {
@@ -1647,7 +1645,7 @@
 
             <div class="single-plan-card">
                 <div class="plan-header">
-                    <div class="plan-icon pro">FULL</div>
+                    <div class="plan-icon pro"><img src="Image_fx (1).png" alt=""></div>
                     <div class="plan-info">
                         <p class="plan-label">Plano único da plataforma</p>
                         <p class="plan-name">Acesso Total Vitalício</p>
@@ -1682,7 +1680,7 @@
 
 
 
-    
+
     <script>
         // Atualizar ano no copyright
         document.getElementById('year').textContent = new Date().getFullYear();
